@@ -1,177 +1,173 @@
 <!DOCTYPE html>
-<html lang="cs">
 <head>
-<meta charset="UTF-8" />
-<title>New year countdown</title>
-   
-   
-<script type="text/javascript">
+</head> <meta charset="UTF-8">
+<title>Website</title>
 
-
-// JavaScript Document
-function countdown(target, element, message) {
-    var dn = new Date();
-    var dt = new Date(target);
-    var diff = dt.getTime() - dn.getTime();
-    diff /= 1000;
-                        
-    // done
-    if(diff <= 0) {
-        document.getElementById(element).innerHTML = message;
-        return(0);
-    }
-                        
-    // days
-    var tmp = diff;
-    var d = Math.floor(tmp / 24 / 3600);
-    tmp = tmp % (24 * 3600);
-                        
-    // hours
-    var h = Math.floor(tmp / 3600);
-    tmp = tmp % 3600;
-                        
-    // minutes
-    var m = Math.floor(tmp / 60);
-    tmp = tmp % 60;
-                        
-    // seconds
-    var s = Math.floor(tmp);
-                        
-    var str =  d + " ";
-    if (d > 1)
-        str += "days, ";
-    else 
-        str += "day, ";
-                        
-    if (h < 10) str += "0";
-    str += h + ":";
-    if (m < 10) str += "0";
-    str += m + ":";
-    if (s < 10) str += "0";
-    str += s; 
-                        
-    document.getElementById(element).innerHTML = str;
-                        
-    setTimeout("countdown('"+target+"','"+element+"','"+message+"')",999);
-} 
-</script>
-
-
-    
 <style type="text/css">
 
-html{
+html {
 display:block;
 }
 
-body{	
-border-top: 2px solid #000;
+body {
+font-size:12px;
+color:#000;
 margin:0 auto;
-font-family:nimbus-sans, Helvetica neue, Arial, sans-serif;	
+font-family:nimbus-sans, Helvetica neue, Arial, sans-serif;
 background-color: #fff;
 }
 
 .container{
-max-width:1000px;
+max-width:1200px;
 margin:0 auto;
 padding: 5px 10px 5px 10px ;
 }
 
-a{
-color:#0a6374;
+img {
+max-width: 100%;
+}
+
+a {
 text-decoration:none;
 }
 
-a:hover{
-color:#000;
+header {
+width: 100%;
+background-color: #FFF;
+border-bottom: 1px solid #6b6b6b;
 }
 
-#countdown{
-font-size:60px;
-text-align:center;
-display: block;
-margin: 60px 0px 0px 0px; 
+header a {
+color: #000;
 }
 
-#countdown-message{
-text-align:center;
-display: block;
-margin: 0px auto; 
+header a:hover, .content a, .current {
+color:#e6af61;
 }
 
-#box{
-text-align: center;
-display: block;
-margin: 0px 0px 0px 0px; 
-}
-
-h1{
-font-weight:lighter;
-font-size:30px;
-text-align: left;
-padding-top:100px;
+header h1{
+font-size:20px;
+text-align:left;
+padding:30px 0 30px 0;
 margin:0 auto;
+float:left;
 }
 
-@media (max-width: 480px){	
+#main{
+text-align:right;
+display:block;
+width:100%;
+padding:30px 0 30px 0;
+}
 
+ul {
+margin:0 auto;
+font-size:20px;
+}
+
+nav li {
+display:inline;
+padding:0 0 0 30px;
+}
+
+nav a {
+color: #000;
+display:inline-block;
+}
+
+nav li a:hover, .content a, .current {
+color:#e6af61;
+}
+
+article {
+margin:0 auto;
+color:#000;
+background-color: #fff;
+font-size:12px;
+text-align: left;
+border-bottom: 1px solid #6b6b6b;
+}
+
+p{
+font-size:12px;
+}
+
+footer {
+height: 40px;
+margin:0 auto;
+font-size:14px;
+text-align:left;
+background-color: #fff;
+color: #000;
+}
+
+@media (max-width: 480px) {
 body {
 min-width: 480px;
 }
-	
-#countdown{
-font-size:40px;
-text-align:center;
-display: block;
-margin: 40px 0px 0px 0px; 
+
+nav{
+text-align:right;
+}
 }
 
-		
+@media (max-width: 768px) {
 }
 
-</style>       
-        
+
+@media (min-width: 768px){
+}
+
+
+@media only screen and (min-width: 1024px) {
+}
+
+
+</style>
+
+
 </head>
-           
+
+
 <body>
 
-	<section class="container">
-        	<span id='countdown'></span>
-       
-        	<script type='text/javascript'>
-        		countdown('2010/03/25 00:00:00','countdown', 'The countdown is complete.');
-			</script>
-
-			<section id="box">
-    			<div id='countdown-message'></div>
-    			<div id='countdown'></div>
-			</section>
-
-			<script type='text/javascript'>
-    		now = new Date();
-    		year = now.getYear()+1900;
-    		document.getElementById('countdown-message').innerHTML = " until new year "+year+".";
-    		countdown((year+1)+'/01/01 00:00:00','countdown', 'Happy new year '+(year+1)+'!');
-			</script>
-
-	</section>
-
-</body>
-
-</html>
 
 
 
+<header>
+
+<section class="container">
+<h1><a href="">INMITE</a></h1>
+<nav id="main">
+<ul>
+<li><a href="" title="Home">HOME</a></li>
+<li><a href="" title="Work">WORK</a></li>
+<li><a href="" title="About">ABOUT</a></li>
+<li><a href="" title="Contact">CONTACT</a></li>
+</ul>
+</nav>
 
 
+</section>
+
+</header>
+
+<article>
+<section class="container">
+<h1>INFO</h1>
+<p>Bjarne Stroustrup, a Danish and British trained computer scientist, began his work on "C with Classes" in 1979.[4] The idea of creating a new language originated from Stroustrup's experience in programming for his Ph.D. thesis. Stroustrup found that Simula had features that were very helpful for large software development, but the language was too slow for practical use, while BCPL was fast but too low-level to be suitable for large software development. When Stroustrup started working in AT&T Bell Labs, he had the problem of analyzing the UNIX kernel with respect to distributed computing. Remembering his Ph.D. experience, Stroustrup set out to enhance the C language with Simula-like features.[9] C was chosen because it was general-purpose, fast, portable and widely used. Besides C and Simula, some other languages that inspired him were ALGOL 68, Ada, CLU and ML. At first, the class, derived class, strong typing, inlining, and default argument features were added to C via Stroustrup's "C with Classes" to C compiler, Cpre. In 1983, the name of the language was changed from C with Classes to C++ (++ being the increment operator in C). New features were added including virtual functions, function name and operator overloading, references, constants, user-controlled free-store memory control, improved type checking, and BCPL style single-line comments with two forward slashes (//), as well as the development of a proper compiler for C++, Cfront. In 1985, the first edition of The C++ Programming Language was released, providing an important reference to the language, as there was not yet an official standard.[11] The first commercial implementation of C++ was released in October of the same year.[12] Release 2.0 of C++ came in 1989 and the updated second edition of The C++ Programming Language was released in 1991.[13] New features included multiple inheritance, abstract classes, static member functions, const member functions, and protected members. In 1990, The Annotated C++ Reference Manual was published. This work became the basis for the future standard. Late feature additions included templates, exceptions, namespaces, new casts, and a Boolean type. As the C++ language evolved, the standard library evolved with it. The first addition to the C++ standard library was the stream I/O library which provided facilities to replace the traditional C functions such as printf and scanf. Later, among the most significant additions to the standard library, was a large amount of the Standard Template Library. It is possible to write object oriented or procedural code in the same program in C++. This has caused some concern that some C++ programmers are still writing procedural code, but are under the impression that it is object oriented, simply because they are using C++. Often it is an amalgamation of the two. This usually causes most problems when the code is revisited or the task is taken over by another coder. C++ continues to be used and is one of the preferred programming languages to develop professional applications. </p>
+<p>C++ is one of the most popular programming languages[5][6] and is implemented on a wide variety of hardware and operating system platforms. As an efficient compiler to native code, its application domains include systems software, application software, device drivers, embedded software, high-performance server and client applications, and entertainment software such as video games.[7] Several groups provide both free and proprietary C++ compiler software, including the GNU Project, LLVM, Microsoft and Intel. C++ has greatly influenced many other popular programming languages, most notably C#[2] and Java.</p>
+<p>C++ (pronounced see plus plus) is a programming language that is general purpose, statically typed, free-form, multi-paradigm and compiled. It is regarded as an intermediate-level language, as it comprises both high-level and low-level language features.[3] Developed by Bjarne Stroustrup starting in 1979 at Bell Labs, C++ was originally named C with Classes, adding object oriented features, such as classes, and other enhancements to the C programming language. The language was renamed C++ in 1983, as a pun involving the increment operator. The language began as enhancements to C, first adding classes, then virtual functions, operator overloading, multiple inheritance, templates and exception handling, among other features. After years of development, the C++ programming language standard was ratified in 1998 as ISO/IEC 14882:1998. The standard was amended by the 2003 technical corrigendum, ISO/IEC 14882:2003. The current standard extending C++ with new features was ratified and published by ISO in September 2011 as ISO/IEC 14882:2011 (informally known as C++11).</p>
+</section>
+
+</article>
+
+<footer>
+<section class="container">
+<p>&copy Copyright 2013 Inmite</p>
+</section>
+</footer>
 
 
-
-
-
-
-
-
-
-
-
+<body>
+<html> 

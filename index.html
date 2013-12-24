@@ -1,264 +1,162 @@
 <!DOCTYPE html>
-<html>
+<html lang="cs">
 <head>
-<meta charset="utf-8" />
-<title></title>
+<meta charset="UTF-8" />
+<link rel="shortcut icon" href="/home/matous/Desktop/website/tessa-lt-dropdowns-21c7868/favicongmail.ico">
+<title>New year countdown</title>
+ 
+ 
+<script type="text/javascript">
 
+
+// JavaScript Document
+function countdown(target, element, message) {
+   var dn = new Date();
+   var dt = new Date(target);
+   var diff = dt.getTime() - dn.getTime();
+   diff /= 1000;
+                       
+   // done
+   if(diff <= 0) {
+       document.getElementById(element).innerHTML = message;
+       return(0);
+   }
+                       
+   // days
+   var tmp = diff;
+   var d = Math.floor(tmp / 24 / 3600);
+   tmp = tmp % (24 * 3600);
+                       
+   // hours
+   var h = Math.floor(tmp / 3600);
+   tmp = tmp % 3600;
+                       
+   // minutes
+   var m = Math.floor(tmp / 60);
+   tmp = tmp % 60;
+                       
+   // seconds
+   var s = Math.floor(tmp);
+                       
+   var str =  d + " ";
+   if (d > 1)
+       str += "days, ";
+   else
+       str += "day, ";
+                       
+   if (h < 10) str += "0";
+   str += h + ":";
+   if (m < 10) str += "0";
+   str += m + ":";
+   if (s < 10) str += "0";
+   str += s;
+                       
+   document.getElementById(element).innerHTML = str;
+                       
+   setTimeout("countdown('"+target+"','"+element+"','"+message+"')",999);
+}
+</script>
+
+
+   
 <style type="text/css">
-html, body, div, a, p, img, ul, li, footer, header, section, span, a img, nav, article, h1, h2, h3, h4 {
-    margin:0;
-    padding:0;
-    border:0;
-    outline:0;
-    font-size:100%;
-  text-decoration:none;
-}
-footer, section, article, header, nav { 
-    display:block;
+
+html{
+display:block;
 }
 
-ul {
-    list-style:none;
-  }
-h1, h2, h3, h4 {
-    font-weight:normal;
-  }
+body{
+border-top: 2px solid #000;
+margin:0 auto;
+font-family:nimbus-sans, Helvetica neue, Arial, sans-serif;
+background-color: #fff;
+}
 
+.container{
+max-width:1000px;
+margin:0 auto;
+padding: 5px 10px 5px 10px ;
+}
 
-html {
-   height:100%;
-   }
-   
+a{
+color:#0a6374;
+text-decoration:none;
+}
+
+a:hover{
+color:#000;
+}
+
+#countdown{
+font-size:60px;
+text-align:center;
+display: block;
+margin: 60px 0px 0px 0px;
+}
+
+#countdown-message{
+text-align:center;
+display: block;
+margin: 0px auto;
+}
+
+#box{
+text-align: center;
+display: block;
+margin: 0px 0px 0px 0px;
+}
+
+h1{
+font-weight:lighter;
+font-size:30px;
+text-align: left;
+padding-top:100px;
+margin:0 auto;
+}
+
+@media (max-width: 480px){
+
 body {
-   font-size:125%;
-   color:#000;
-   border-top:solid 3px #000;
-  font-family:georgia,"times new roman",times,serif;  
-   font-weight:lighter;
-   line-height:1.3em;
-   }
-
-/* header section */
-
-
-
-.masthead {
-    width:100%;
-    padding:7.25em 0;
-    } 
-
-.masthead h1 {
-  width:100%;
-  text-align:center;
-font-family:georgia,"times new roman",times,serif;  
-  font-size:50px;
-  line-height:35px;
-  letter-spacing:1px;
-  }
-  
-header a, article a:hover {
-  color:#333;
-  }
-header a:hover, article a { 
-    color:#c22a09; 
-  }
-.menu {
-  text-align:center;
-  display:block;
-  width:100%;
-  padding:35px 0 0 0;
-  font-size:35px;
-  line-height:35px;
-  word-spacing:1px;
-  }
-.menu li {
-  display:inline;
-  padding:0 9px;
-  }
-.menu a {
-  display:inline-block;
-  }
-  
-
-
-/* home page */
-
-
-.main_image {
-  width:100%;
-  height:auto;
+min-width: 480px;
 }
 
-/* footer */
-
-
-footer { 
-  width:100%;
-  border-top:solid 1px #eee;
-   }
-footer p {
-  width:100%;
-  text-align:center;
-  padding:40px 0;
-  display:block;
-line-height:35px;
-  font-size:16px;
-  word-spacing:1px;
-   }
-   
-   
-/* portfolio articles */  
-
-
-article  {
-width:90%;
-  max-width:40em;
-  margin:0 auto;
-  overflow:auto;
-  padding:0 0 6px 0;
-  }
-
-article h1, .archive_header {
-   width:100%;
-   text-align:center;
-   padding:4px 0;
-   font-size:2px;
-   font-style:italic;
-   border-top:solid 1px #eee;
-  }
-article img {
-  width:100%;
-  max-width:50px;
-  height:auto;
-  }
-
-article h3 {
-  margin:6px 0 30px 0;
-  font-size:30px;
-  font-style:italic;
-  }
-article p {
-  margin:0 0 50px 0;
-  clear:both;
-  line-height:35px;
-  font-size:15px;
-  word-spacing:1px;
-  } 
-
-
-
-
-
-
-
-
-@media (max-width: 1024px){
-article  {
-  max-width:1024px;
-  }
+#countdown{
+font-size:40px;
+text-align:center;
+display: block;
+margin: 40px 0px 0px 0px;
 }
 
-@media (max-width: 768px){
-.masthead {
-    padding:4em 0;
-    } 
-
-footer p {
-  padding:30px 0;
-   }
-} 
-
-
-
-@media (max-width: 600px) {
-  body {
-   font-size: 14px;
- }
- .masthead {
-    padding:50px 0;
-    }
-.masthead h1 {
-   font-size:60px;
-  }
-article  {
-  padding:0 0 40px 0;
-  }
-
-article p {
-  font-size:18px;
-  line-height:40px;
-  margin:0 0 40px 0;
-}
-
-article h3 {
-  font-size:25px;
-  }
-
-h3 {
-  width:100%;
-  text-align:center;
-}
-  }
-
-@media (max-width: 320px) {
-.masthead h1 {
-    font-size:50px;
-  }
-
-
-.article p {
-    font-size:14px;
-  }
 
 }
 
-</style>
-
+</style>      
+       
 </head>
-
-
+         
 <body>
 
-<header class="masthead">
-<div class="inner_no_overflow">
-<h1><a href="">LOGO</a></h1>
-<ul class="menu">
-<li><a href="">Info</a></li>
-<li><a href="">Info</a></li>
-<li><a href="">Info</a></li>
-<li><a href="">Info</a></li>
-</ul>
-</div>
-</header>
+<section class="container">
+        <span id='countdown'></span>
+     
+        <script type='text/javascript'>
+        countdown('2010/03/25 00:00:00','countdown', 'The countdown is complete.');
+</script>
 
+<section id="box">
+    <div id='countdown-message'></div>
+    <div id='countdown'></div>
+</section>
 
+<script type='text/javascript'>
+    now = new Date();
+    year = now.getYear()+1900;
+    document.getElementById('countdown-message').innerHTML = " until new year "+year+".";
+    countdown((year+1)+'/01/01 00:00:00','countdown', 'Happy new year '+(year+1)+'!');
+</script>
 
-<article class="intro" id="info">
-
-<h3 title="About Me">About Me</h3>
-<p>Hello, my name is Simon Foster and I run a tiny one-man web design studio in London, England. I specialise in <a href="http://simonfosterdesign.com/home/category/responsive/">responsive</a>
- front-end design, HTML/CSS and web typography. I try to make the 
-websites I design and build as simple and intuitive to use as possible 
-whilst still having a unique aesthetic appeal. Please feel free to have a
- look at the work in my <a href="http://simonfosterdesign.com/home/category/work">portfolio</a>, or if you like, check out some of my <a href="http://simonfosterdesign.com/home/category/side-projects">side projects</a> and <a href="http://simonfosterdesign.com/home/category/resources">resources</a>.
- My work is regularly featured in all kinds of design related <a href="http://simonfosterdesign.com/home/publications/publications/">books and magazines</a> and I also occasionally write down some of my more lucid thoughts and observations in my <a href="http://simonfosterdesign.com/blog">blog</a>.
-</p>
-
-<h3 title="Contact">Contact</h3>
-<p>To get in touch you can <a href="mailto:simon@simonfosterdesign.com">send me an email</a> or follow me on <a href="https://twitter.com/#%21/simonstretch">twitter</a>. Please note I am fully booked now until January 2014.</p>
-
-
-
-</article>
-
-
-<footer>
-<p>&copy Copyright <script>document.write(new Date().getFullYear())</script> Name</p>
-</footer>
-
-
-
-
+</section>
 
 </body>
+
 </html>
